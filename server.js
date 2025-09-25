@@ -12,7 +12,7 @@ var StaticDirectory = path.join(__dirname, 'public');
 app.use(express.static(StaticDirectory));
 
 app.listen(port, () => {
-    console.log(`Listening on http://127.0.0.1:${port}/`);
+    console.log(`Listening on http://127.0.0.1:3000/`);
 });
 
 console.log(message);

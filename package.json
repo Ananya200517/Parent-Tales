@@ -1,0 +1,25 @@
+{
+  "name": "assignment-2-ananya200517",
+  "version": "1.0.0",
+  "description": "This is an INDIVIDUAL assignment. You can (and should) work in groups to research how to do the assignment, but each person should code their own version and make their own submission.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CSC317-F25/assignment-2-Ananya200517.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/CSC317-F25/assignment-2-Ananya200517/issues"
+  },
+  "homepage": "https://github.com/CSC317-F25/assignment-2-Ananya200517#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

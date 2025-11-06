@@ -73,7 +73,7 @@
             </section>
 
             <footer>
-        <div class="footer-container">
+        <div class="footer-content">
             <div class="footer-section left">
                 <h2>Useful Links</h2>
                 <a href="index.html">Home Page</a><br>
@@ -105,5 +105,73 @@
 
     <p class="footer-bottom">&copy; 2025 Parent Tales | Designed with ❤️</p>
     </footer>
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Order Your Delicacy Now!</h2>
+            <form id="orderForm">
+                <label for="cakeName">Select Cake:</label>
+                <select id="cakeName" name="cakeName" required>
+                    <option value="">--Please choose an option--</option>
+                    <option value="Vanilla Cake">Vanilla Cake</option>
+                    <option value="Chocolate Cake">Chocolate Cake</option>
+                    <option value="Pineapple Cake">Pineapple Cake</option>
+                    <option value="Death by Chocolate Cake">Death by Chocolate Cake</option>
+                    <option value="Pinto Cake">Pinto Cake</option>
+                    <option value="Strawberry Cake">Strawberry Cake</option>
+                    <option value="Cookies n Creme Cake">Cookies n Creme Cake</option>
+                    <option value="Truffle Cake">Truffle Cake</option>
+                    <option value="Doll Cake">Doll Cake</option>
+                    <option value="Coffee Cake">Coffee Cake</option>
+                </select>
+                
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+                <label for="address">Delivery Address:</label>
+                <textarea id="address" name="address" rows="2" required></textarea>
+
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="0.5" value="0.5" step="0.5" required><br><br>
+
+                <label for="date">Delivery Date & Time:</label>
+                <input type="datetime-local" id="date" name="date" required><br><br>
+
+                <label for="message">Message to write on cake:</label>
+                <input type="text" id="message" name="message" placeholder="E.g., Happy Birthday Ananya!"><br><br>
+
+                <label for="instructions">Special Instructions if any:</label>
+                <textarea id="instructions" name="instructions" rows="3" placeholder="E.g., Allergies, etc."></textarea><br><br>
+                
+                <button type="submit">Place Order</button>
+                <button type="button" class="close-btn">Cancel Order</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        const modal = document.getElementById("orderModal");
+        const closeBtn = document.getElementsByClassName("close")[0];
+        const orderForm = document.getElementById("orderForm");
+
+        document.querySelectorAll(".cake button").forEach(button => {
+            button.addEventListener("click", (e) => {
+                const cakeName = e.target.parentElement.querySelector("h2").innerText;
+                document.getElementById("cakeName").value = cakeName;
+                modal.style.display = "flex";
+            });
+        });
+        closeBtn.onclick = () => modal.style.display = "none";
+  window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; };
+
+  orderForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    alert("🎉 Success! Your warm delicacy is on its way!!");
+    modal.style.display = "none";
+    orderForm.reset();
+  });
+</script>
     </body>
     </html>
